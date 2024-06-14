@@ -1,15 +1,19 @@
-import { useState } from 'react'
+import "./App.css";
+import { Route, Routes } from "react-router-dom";
+import Currencies from "./pages/Currencies";
+import Main from "./pages/Main";
+import Price from "./pages/Price";
+import Nav from "./components/Nav";
 
-import './App.css'
-
-function App() {
-  
-
+export default function App() {
   return (
-    <>
-     
-    </>
-  )
+    <div className="App">
+      <Nav />
+      <Routes>
+        <Route path="/" element={<Main />} />
+        <Route path="/currencies" element={<Currencies />} />
+        <Route path="/price" element={<Price />} />
+      </Routes>
+    </div>
+  );
 }
-
-export default App
